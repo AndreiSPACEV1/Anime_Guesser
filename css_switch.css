@@ -1,0 +1,207 @@
+.neumorphism-toggle {
+    
+    width:71%;
+    border: 10px solid #000;
+    display: flex;
+    color: #ffffff;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    margin: auto;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+  
+    transition: transform .3s;
+    transform: scale(var(--scale, 1)) translateZ(0);
+    &:active {
+        --scale: .96;
+    }
+    input {
+        display: none;
+        & + label {
+            width:70%;
+            background: #ffffff00;
+            border-radius: 9px;
+            padding: 16px 0 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            align-items: center;
+            justify-items: center;
+            justify-content: center;
+            align-content: center;
+            
+            transition: box-shadow .4s;
+            &:before {
+                content: '';
+                display: flex;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: inherit;
+                background: linear-gradient(-45deg, #fb00ff, #f7146b, #009dff, #00ffc3);
+                align-items: center;
+                justify-items: center;
+                justify-content: center;
+                align-content: center;
+                color: rgb(255, 255, 255);
+                background-size: 200% 200%;
+                transition: 0.1s linear;
+                text-shadow: #000 0px 0px 10px ;
+                animation: gradient1 10s ease infinite alternate;
+                opacity: var(--gradient, 0);
+                transition: opacity .4s;
+                
+            }
+            .switch {
+                position: relative;
+                display: inline-block;
+                z-index: 1;
+                vertical-align: top;
+                height: 26px;
+                width: 40px;
+                border-radius: 11px;
+                background: #ECEFFC;
+                border: 2px solid #fff;
+                background: linear-gradient(-45deg, #fb00ff, #f7146b, #009dff, #00ffc3);
+                align-items: center;
+                justify-items: center;
+                justify-content: center;
+                align-content: center;
+                color: rgb(255, 255, 255);
+                background-size: 200% 200%;
+                transition: 0.1s linear;
+                text-shadow: #000 0px 0px 10px ;
+                animation: gradient1 10s ease infinite alternate;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    
+                    border-radius: inherit;
+                    background: linear-gradient(90deg, #000000, #000000);
+                    /* background: linear-gradient(90deg, #4F97FF, #275EFE); */
+
+                    opacity: var(--gradient, 0);
+                    transition: opacity .4s;
+                }
+                .dot {
+                    background: #D1D6EE;
+                    position: absolute;
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    
+                    left: -3px;
+                    top: -1px;
+                    transform: translateX(var(--offset, 0));
+                    transition: transform .4s, box-shadow .4s;
+                    box-shadow: -4px -4px 8px var(--light-shadow-2, transparent), 4px 4px 8px var(--shadow, transparent);
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        border-radius: inherit;
+                       
+                        background: linear-gradient(160deg, #F1F4FF, #F9FAFF);
+                       
+                        opacity: var(--gradient, 0);
+                        transition: opacity .4s;
+                    }
+                }
+            }
+            span {
+                line-height: 22px;
+                font-size: 16px;
+                color: var(--text, #646B8C);
+                font-weight: 500;
+                display: inline-block;
+                vertical-align: top;
+                z-index: 1;
+                position: relative;
+                margin-left: 12px;
+                transition: color .4s;
+                color: #000;
+                font-size: 30px;
+            }
+            & + span {
+                text-align: center;
+                display: block;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 100%;
+                opacity: 0;
+                font-size: 12px;
+                font-weight: 500;
+                color: #A6ACCD;
+                transform: translateY(4px);
+                transition: opacity .4s, transform .4s;
+                
+            }
+        }
+        &:not(:checked) {
+            & + label {
+                & + span {
+                    opacity: 1;
+                    transform: translateY(12px);
+                
+                }
+            }
+        }
+        &:checked {
+            & + label {
+                --offset: 18px;
+                --text: #404660;
+                --gradient: 1;
+                --shadow: rgba(0, 6, 39, .1);
+                --light-shadow: rgba(255, 255, 255, .8);
+                --light-shadow-2: rgba(255, 255, 255, .1);
+            }
+        }
+    }
+}
+
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    box-sizing: inherit;
+    &:before,
+    &:after {
+        box-sizing: inherit;
+    }
+}
+
+
+
+
+  @keyframes gradient1 {
+    0% {
+      background-position: 0% 50%;
+     
+    }
+    100% {
+      background-position: 100% 50%;
+      
+    }
+    
+  }
+  
+@media (max-width: 720px) {
+     .neumorphism-toggle{
+      width: 100%;
+      height: auto;
+    }
+  }
+  

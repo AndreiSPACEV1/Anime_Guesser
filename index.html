@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime Guesser</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="Site_icon.ico" type="image/x-icon">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css.css" />
+    <link rel="stylesheet" href="css_switch.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <h1>Anime Guesser</h1>
+    </div>
+
+    <div class="menu">
+      <div class="neumorphism-toggle">
+        <input type="checkbox" id="neumorphism" checked />
+        <label for="neumorphism">
+          <div class="switch">
+            <div class="dot"></div>
+          </div>
+          <span class="TextMode">AUTO</span>
+        </label>
+        <span></span>
+      </div>
+
+      <!-- twitter -->
+    </div>
+
+    <div class="page">
+      <div class="PTS">
+        <h3 id="result">
+          Score: 0 <br />
+          Pg: 1/127
+        </h3>
+      </div>
+
+      <button class="getAnimeCharacter" id="Random-Anime-Character">
+        <span>Random</span> <span>Character</span>
+      </button>
+
+      <div class="img-anime card">
+        <img
+          class="card-image"
+          id="animeImage"
+          src="/Proiecte/P6 -anmieEdi/Poza_anime/G388685.jpg"
+          alt="Imagine de rezervă"
+          width="225"
+          height="350"
+          onerror="this.src='https://via.placeholder.com/225X350';"
+        />
+      </div>
+
+      <div class="buttons-group">
+        <button class="button-B" id="button-B">Boy</button>
+        <button class="button-G" id="button-G">Girl</button>
+      </div>
+
+      <div class="result raspunsul">
+        <h3 id="raspunsul">-</h3>
+      </div>
+
+      <!-- <div class="footer">
+        <h3>VIA :</h3>
+        <a href="https://jikan.moe/"
+          ><h3>Jikan API</h3>
+          <img class="via-logo" src="jikan.logo.png" alt=""
+        /></a>
+      </div> -->
+    </div>
+
+    <script type="module" src="./dist/bundle.js"></script>
+  </body>
+</html>
